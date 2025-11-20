@@ -10,6 +10,8 @@
     echo "Hello World!";
     echo "<br>";
     echo "<h2>My name is Kong.</h2>";
+    echo 'PHP version:' .phpversion();
+    php.info();
 ?>
 </body>
 </html>
