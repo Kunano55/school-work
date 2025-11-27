@@ -26,12 +26,16 @@
         $x = 1;
         $y = 1;
 
+        echo "ใช้ for<br>";
+
         for ($i = 1; $i <= 4; $i++) {
             for ($j = 1; $j <= $i; $j++) {
                 echo "*";
             }
             echo "<br>";
         }
+
+        echo "<br>ใช้ while<br>";
 
         while ($x <= 3){
                 while ($y <= 4) {
@@ -43,6 +47,8 @@
             $x++;
         }
 
+        echo "<br>ใช้ do while + for<br>";
+
         $x = 1;
 
         do {
@@ -52,6 +58,8 @@
             echo "<br>";
             $x++;
         } while ($x <= 3);
+
+        echo "<br>ใช้ for<br>";
         
         echo "* * * * * *<br>";
 
@@ -65,6 +73,8 @@
         }
 
         echo "* * * * * *<br>";
+
+        echo "<br>ใช้ for<br>";
 
         for ($i = 3; $i >= 1; $i--) {
             for ($j = $i; $j >= 1; $j--) {
