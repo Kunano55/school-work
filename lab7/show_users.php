@@ -59,7 +59,7 @@ $all_users = mysqli_query($conn, "SELECT * FROM user_data");
     <?php if ($action == 'add' || $action == 'edit'): ?>
     <div class="card p-4 shadow mx-auto" style="max-width: 600px;">
         <h3><?= $id ? 'แก้ไขข้อมูล' : 'เพิ่มข้อมูลใหม่' ?></h3>
-        <form action="manage.php" method="POST">
+        <form action="show_users.php" method="POST">
             <input type="hidden" name="id" value="<?= $id ?>">
             <div class="mb-3">
                 <label class="form-label">ชื่อ-นามสกุล</label>
@@ -85,14 +85,14 @@ $all_users = mysqli_query($conn, "SELECT * FROM user_data");
                 <input type="date" name="birthday" class="form-control" value="<?= $user['birthday'] ?>">
             </div>
             <button type="submit" name="save" class="btn btn-primary w-100">บันทึกข้อมูล</button>
-            <a href="manage.php" class="btn btn-link w-100 mt-2 text-decoration-none text-muted">ยกเลิก</a>
+            <a href="show_users.php" class="btn btn-link w-100 mt-2 text-decoration-none text-muted">ยกเลิก</a>
         </form>
     </div>
 
     <?php else: ?>
     <div class="d-flex justify-content-between mb-3 align-items-center">
         <h2>รายชื่อสมาชิก (user_data)</h2>
-        <a href="manage.php?action=add" class="btn btn-success">+ เพิ่มข้อมูล</a>
+        <a href="show_users.php?action=add" class="btn btn-success">+ เพิ่มข้อมูล</a>
     </div>
     
     <div class="table-responsive">
@@ -112,8 +112,8 @@ $all_users = mysqli_query($conn, "SELECT * FROM user_data");
                     <td><?= $row['email'] ?></td>
                     <td><?= $row['birthday'] ?></td>
                     <td class="text-center">
-                        <a href="manage.php?action=edit&id=<?= $row['id'] ?>" class="btn btn-sm btn-warning">แก้ไข</a>
-                        <a href="manage.php?delete=<?= $row['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล?')">ลบ</a>
+                        <a href="show_users.php?action=edit&id=<?= $row['id'] ?>" class="btn btn-sm btn-warning">แก้ไข</a>
+                        <a href="show_users.php?delete=<?= $row['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล?')">ลบ</a>
                     </td>
                 </tr>
                 <?php endwhile; ?>
