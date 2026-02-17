@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์มข้อมูลแมว</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 40px 0; background-color: #f8f9fa; font-family: 'Sarabun', sans-serif; }
+        .form-container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        #imagePreview { max-width: 200px; display: none; margin-top: 10px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 form-container">
+                <h3 id="formTitle" class="mb-4">เพิ่มข้อมูลสายพันธุ์แมว</h3>
+                <form id="catForm">
+                    <input type="hidden" id="cat_id" name="id">
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">ชื่อภาษาไทย</label>
+                            <input type="text" class="form-control" name="name_th" id="name_th" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">ชื่อภาษาอังกฤษ</label>
+                            <input type="text" class="form-control" name="name_en" id="name_en" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">คำอธิบาย</label>
+                        <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">ลักษณะเด่น</label>
+                        <textarea class="form-control" name="characteristics" id="characteristics" rows="2"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">การดูแลรักษา</label>
+                        <textarea class="form-control" name="care_instructions" id="care_instructions" rows="2"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">รูปภาพ</label>
+                        <input type="file" class="form-control" name="image" id="imageInput" accept="image/*">
+                        <img id="imagePreview" src="" alt="Preview">
+                        <input type="hidden" id="existing_image" name="image_url">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">สถานะการแสดงผล</label>
+                        <select class="form-select" name="is_visible" id="is_visible">
+                            <option value="1">แสดง (Visible)</option>
+                            <option value="0">ซ่อน (Hidden)</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary px-4">บันทึกข้อมูล</button>
+                        <a href="cat_back_end.html" class="btn btn-light px-4">ยกเลิก</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/cat_form_scripts.js"></script>
+</body>
+</html>
